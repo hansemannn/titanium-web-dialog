@@ -62,7 +62,7 @@
 - (SFSafariViewController *)safariController:(NSString *)url withEntersReaderIfAvailable:(BOOL)entersReaderIfAvailable andBarCollapsingEnabled:(BOOL)barCollapsingEnabled
 {
   if (_safariController == nil) {
-    NSURL *safariURL = [NSURL URLWithString:[url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *safariURL = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 #if IS_IOS_11
     if (@available(iOS 11.0, *)) {
       SFSafariViewControllerConfiguration *config = [[SFSafariViewControllerConfiguration alloc] init];
